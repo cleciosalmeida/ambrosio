@@ -1,0 +1,47 @@
+body{
+display: flex;
+justify-content: center;
+ align-items: center;
+ background-color: #6b6363;
+}
+.AdminContainer{ /*Estilo da DIV onde está o formulário*/
+margin-top: 20%;
+color: #36364b;
+border: 1px solid;
+border-color: #6b6363;
+border-radius: 10px;
+width: 20%;
+max-height: 200px;
+min-height:auto;
+background-color: white;
+box-shadow: #493838 5px 5px;
+
+}
+.formAdmin{ /*Estilo do formulário*/
+    width: 100%;
+    padding: 3px 3px 3px 3px;
+    margin: 4px 4px 4px 4px;
+
+}
+.AdminBtn{ /*Estilo do botão de submissão*/
+border-radius: 10%;
+text-decoration-style: none;
+}
+.AdminBtn:hover{
+    transition: 0.9s;
+    cursor: pointer;
+    background-color: #073333;
+    color:white;
+   
+}
+#Voltar{
+    text-align: right;
+    text-decoration:none;
+    color: black;
+}
+#Voltar:hover{
+    color: #414104;
+    transition: 0.5s;
+    transition-property: all;
+
+}    

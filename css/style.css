@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.containercalculadora
+{
+  border: 5px solid #f70101;
+
+}
+.listadeabelhas{
+  list-style-type: none;
+}
+.calculadora1 {
+  margin-top: 2%;
+  border: 5px solid #383838;
+  width: 700px; 
+  margin-left: auto;
+  margin-right: auto; 
+  align-items: center;
+  align-content: center;
+ }
+.contcalculadora {
+  border: 20px solid #5f01f7;
+  width: 100%; 
+  margin-left: auto;
+  margin-right: auto; 
+  color: #383838;
+}
+.numeros{  /*Tamanho das caixas de medidas*/
+  width: 35pt;
+  align-items: center;
+}
+.header {
+  width: 100%;
+  min-height: 40px;
+  background-color: #bd9c0b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /*vai espaçar sozinho*/
+  flex-wrap: wrap; /*vai quebrar sozinho */
+  padding: 10px;
+  gap: 8px 15px; /*quando quebrarem vão ter automaticamente um padding de 30px, mas quando diminuir não vão se encostar por causa do GAP*/
+}
+.logoNavBar { /*modificador da imagem*/
+  width: 180px;
+  animation: brilho 8.5s infinite ease-in-out;
+}
+@keyframes brilho { /*adiciona bilho à imagem*/
+  60%, 20% {
+      filter: brightness(1); /* Brilho normal */
+  }
+  80% {
+      filter: brightness(2); /* Aumenta o brilho no meio da animação */
+  }}
+.headerBtnGroup {
+  display: flex;
+  gap: 15px;
+}
+.navBtn {
+  font-size: 16px;
+  padding: 6px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.6s;
+}
+.navBtn:hover {
+  border-bottom: 2px solid #eec408;
+}
+.sectionTitle {
+  font-size: 26px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding-top: 20px;
+}
+.duas-colunas {
+  column-count: 2; /* Define o número de colunas */
+  column-gap: 20px; /* Define o espaçamento entre as colunas */
+  width: 80%; /* Define a largura da div */
+  margin: 0 auto; /* Centraliza a div horizontalmente */
+}
+/* Estilos opcionais para o conteúdo dentro da div */
+.duas-colunas p {
+  margin-bottom: 15px; /* Espaçamento entre parágrafos */
+}
+
+.sectionDescription {
+  text-align: center;
+  font-family: Arial, sans-serif; /* Escolha uma fonte moderna e legível */
+  font-size: 16px; /* Tamanho de fonte confortável para leitura */
+  line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+  color: #333; /* Cor do texto em contraste com o fundo branco */
+  margin: 20px 0; /* Margem para separar o texto de outros elementos */
+  padding: 10px; /* Espaçamento interno para melhorar a legibilidade */
+  background-color: #fff; /* Fundo branco para o texto */
+  border-radius: 5px; /* Borda arredondada para suavizar a aparência */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destacar o texto */
+}
+.gridContainer {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "mainContent sidebarContent";
+  padding: 20px;
+  flex: 1 0 auto;
+}
+.mainContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /*espaçamento entre os cards*/
+  grid-area: mainContent;
+}
+.categoryCard {
+  width: 280px;
+  height: 380px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: 0.6s;
+  cursor: pointer;
+  text-align: center;
+}
+.categoryCard:hover {
+  border-color: #727402;
+}
+.mainCardImg {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  padding: 5px;
+}
+.mainCategoryCardTitle {
+  color:#bb9005; /* Cor inicial */
+  transition: color 0.3s ease; /* Suaviza a transição */
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 6px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.mainCategoryCardTitle:hover {
+    color: rgb(141, 141, 129); /* Cor ao passar o mouse */
+}
+
+.mainCategoryCardDescription {
+  padding: 6px;
+}
+.sidebarContent {
+  background-color: rgb(136, 70, 9);
+  color: white;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
+  grid-area: sidebarContent;
+  gap: 20px;
+  background: linear-gradient(270deg, #f5d103, #f0c653);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }}
+
+.sidebarCard {
+  width: 75%;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.sidebarCardImg {
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px;
+}
+.sidebarCardTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  text-align: center;
+}
+.sidebarCard:hover {
+  border-color: rgb(10, 0, 0);
+}
+.footer {
+  width: 100%;
+  min-height: 40px;
+  background-color: #806905;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 10px;
+}
+.logoFooter {
+  width: 60px;
+}
+.footerAnchor {
+  color: white;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+@media (max-width: 630px) {
+  .gridContainer {
+    grid-template-areas: "mainContent" "sidebarContent";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .sidebarCard {
+    min-width: auto;
+  }
+  .footerAnchor {
+    font-size: 19px;
+  }
+}
+@media (max-width: 463px) {
+  .header {
+    justify-content: center;
+  }
+  .footer {
+    justify-content: center;
+  }
+} ;
+
+/*Abaixo é a formatação da página sobre as abelhas*/
+.gridAbelhas {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "AbeContent";
+  padding: 20px;
+  flex: 1 0 auto;
+  
+}
+.AbeContent {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /*espaçamento entre os cards*/
+  grid-area: AbeContent;
+  text-align: center; /*está centralizando o texto dentro dos cards*/
+  
+   
+}
+.AbeCard {
+  width: 400px;
+  height: auto;
+  border: 2px solid rgb(214, 211, 211);
+  border-radius: 10px;
+  transition: 0.9s;
+  cursor: pointer;
+  
+ ;
+}
+.AbeCard:hover {
+  border-color: #f1e20e;
+}
+.TituloCards {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 6px;
+  font-style: italic;
+}
+.TituloCards:hover {
+  color: #f0b512;
+  text-shadow: 5px 5xp Blur black;
+  transition: 0.9s;
+}
+.AbeCardImg { /*Para edição de cada imagem dos cartões das abelhas*/
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  padding: 5px;
+ 
+}
+.textoExplicativo{
+  margin: 20px;
+  font-size: 18px;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
+.destaqueTexto{
+  font-size: 18px;
+  color: #727402;
+}
+
+.mainCardImg { /*filtro para as imagens*/
+  filter: sepia(40%) saturate(120%) hue-rotate(-10deg) brightness(1.1) contrast(0.9);
+  transition: filter 0.5s ease-in-out;
+}
+
+.mainCardImg:hover {
+  filter: sepia(60%) saturate(150%) hue-rotate(0deg) brightness(1.2) contrast(1);
+}
+
+
+/*Fim da formatação da página sobre as abelhas*/
