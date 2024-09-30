@@ -7,7 +7,7 @@ function atualizarTextoExplicativo() {
     let textoExplicativo = '';
     switch (tipoCaixa) {
       case 'Mandaçaia':
-        textoExplicativo = 'A caixa para abelhas Mandaçaia deve ser maior, com medidas que permitem boa ventilação e espaço interno, devido ao tamanho dessas abelhas.';
+        textoExplicativo = 'A caixa para abelhas Mandaçaia deve ser maior, com medidas que permitem boa ventilação e espaço interno, devido ao tamanho dessas abelhas. O cálculo é feito tendo presente que cada lado do caixa é de 15cm, a altura é de 7cm e a espessura é de 3cm. O custo é feito pelo metro';
         break;
       case 'Jataí':
         textoExplicativo = 'A caixa para abelhas Jataí costuma ser menor, pois essas abelhas são de menor porte e se adaptam a espaços mais compactos.';
@@ -49,7 +49,7 @@ function atualizarTextoExplicativo() {
     let fator = 1; // Valor padrão
     switch (tipoCaixa) {
       case 'Mandaçaia':
-        fator = 1.2;
+        fator = 0.126; //O fator é determinado por um cálculo fixo da quantidade de madeira necessária para a caixa de mandaçaia, considerando os 4 lados, a altura e largura. Fundo e tampa.//
         break;
       case 'Jataí':
         fator = 0.8;
@@ -70,6 +70,6 @@ function atualizarTextoExplicativo() {
   
     // Exibir o resultado na label
     document.getElementById("resultado").innerText = 
-      `Quantidade de madeira necessária para a caixa de ${tipoCaixa}: ${quantidadeMadeira.toFixed(2)} unidades`;
+      `Quantidade de madeira necessária para a caixa de ${tipoCaixa}, R$: ${quantidadeMadeira.toFixed(2)}`;
   }
   
