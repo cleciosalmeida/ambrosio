@@ -49,7 +49,7 @@ function atualizarTextoExplicativo() {
     let fator = 1; // Valor padrão
     switch (tipoCaixa) {
       case 'Mandaçaia':
-        fator = 0.126; //O fator é determinado por um cálculo fixo da quantidade de madeira necessária para a caixa de mandaçaia, considerando os 4 lados, a altura e largura. Fundo e tampa.//
+        fator = 0.00126; //O fator é determinado por um cálculo fixo da quantidade de madeira necessária para a caixa de mandaçaia, considerando os 4 lados, a altura e largura. Fundo e tampa.//
         break;
       case 'Jataí':
         fator = 0.8;
