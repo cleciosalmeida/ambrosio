@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 20px;
+ 
+    justify-content: center;
+    align-items: center;
+    
 }
 .container {
   min-height: 100vh;
@@ -120,7 +124,7 @@
 }
 .categoryCard {
   width: 280px;
-  height: 380px;
+  height: 40%;
   border: 2px solid transparent;
   border-radius: 10px;
   transition: 0.6s;
@@ -187,6 +191,7 @@
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px;
   text-align: center;
+  color: rgb(46, 33, 2) ;
 }
 .sidebarCard:hover {
   border-color: rgb(10, 0, 0);
@@ -305,6 +310,10 @@
 .mainCardImg:hover {
   filter: sepia(60%) saturate(150%) hue-rotate(0deg) brightness(1.2) contrast(1);
 }
-
+.conteudo_mirim{
+  align-content: center;
+  align-items: center;
+  width: 50%;
+}
 
 /*Fim da formatação da página sobre as abelhas*/
