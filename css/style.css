@@ -260,6 +260,48 @@
   
    
 }
+/*ABAIXO, Estilização da página "pasto"*/
+.PastoContent {
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Espaçamento entre os cards */
+  grid-area: PastoContent;
+  text-align: center; /* Centraliza o texto dentro dos cards */
+}
+
+.PastoCard {
+  width: 100%; /* Cards ocupando 100% da largura disponível dentro de seu container */
+  max-width: 200px; /* Limite máximo para o tamanho do card */
+  height: 200px; /* Altura fixa para garantir que todos os cards tenham o mesmo tamanho */
+  border: 2px solid rgb(196, 221, 128);
+  border-radius: 10px;
+  transition: 0.9s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Garante que nada saia do card */
+}
+
+.PastoCard img {
+  width: 100%; /* As imagens ocupam toda a largura do card */
+  height: 60%; /* Definimos uma altura fixa para as imagens */
+  object-fit: cover; /* A imagem se ajusta mantendo suas proporções, sem distorcer */
+  object-position: center; /* Centraliza a imagem */
+}
+
+.PastoCard:hover {
+  border-color: #8ee61c;
+}
+
+.PastoCard .content {
+  padding: 10px;
+  flex-grow: 1; /* Permite que o conteúdo do card se expanda, caso necessário */
+}
+
+/*ACIMA, Estilização da página "pasto"*/
 .AbeCard {
   width: 400px;
   height: auto;
