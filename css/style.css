@@ -112,8 +112,9 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-areas: "mainContent sidebarContent";
-  padding: 20px;
+  padding: 10px;
   flex: 1 0 auto;
+  align-items: first baseline;
 }
 .mainContent {
   display: flex;
