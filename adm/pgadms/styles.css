@@ -9,12 +9,12 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f6f9;
-    color: #333;
+    color: #383838;
 }
 
 /* Header */
 header {
-    background-color: #00897b;
+    background-color: #bd9c0b;
     color: white;
     padding: 20px;
     display: flex;
@@ -41,7 +41,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #c8fff4;
+    color: #f5d103;
 }
 
 /* Main */
@@ -53,6 +53,7 @@ main h1 {
     margin-bottom: 30px;
     font-size: 2em;
     text-align: center;
+    color: #806905;
 }
 
 /* Grid dos cards */
@@ -69,16 +70,18 @@ main h1 {
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    border: 1px solid #d1c389;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    border-color: #bb9005;
 }
 
 .card h2 {
     margin-bottom: 15px;
     font-size: 1.4em;
-    color: #00897b;
+    color: #727402;
 }
 
 /* Botões */
@@ -88,7 +91,7 @@ button {
     margin: 5px 0;
     padding: 10px;
     border: none;
-    background-color: #00897b;
+    background-color: #bd9c0b;
     color: white;
     border-radius: 8px;
     cursor: pointer;
@@ -97,7 +100,7 @@ button {
 }
 
 button:hover {
-    background-color: #00695c;
+    background-color: #a78305;
 }
 
 button.delete {
@@ -112,6 +115,24 @@ button.delete:hover {
 footer {
     text-align: center;
     padding: 15px;
-    background-color: #eeeeee;
+    background-color: #806905;
+    color: white;
     margin-top: 40px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main h1 {
+        font-size: 1.5em;
+    }
 }
