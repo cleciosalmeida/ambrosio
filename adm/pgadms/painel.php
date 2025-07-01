@@ -20,7 +20,7 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 <body>
     <header>
-        <div class="logo">🐝 Meliponário Admin</div>
+        <div class="logo">🐝 Admin</div>
         <nav>
             <ul>
                 <li><a href="#">Dashboard</a></li>
@@ -86,7 +86,7 @@ if (!isset($_SESSION['usuario'])) {
 
             <div class="card">
                 <h2>Usuários</h2>
-                <button onclick="cad_usuario.html">Novo usuário</button>
+                <a href="cad_usuario.html" class="sublinhado"><button>Novo usuário</button></a>
                 <button>Editar</button>
                 <button class="delete">Excluir</button>
             </div>
