@@ -85,10 +85,9 @@ if (!isset($_SESSION['usuario'])) {
             </div>
 
             <div class="card">
-                <h2>Usuários</h2>
-                <a href="cad_usuario.html" class="sublinhado"><button>Novo usuário</button></a>
-                <button>Editar</button>
-                <button class="delete">Excluir</button>
+                <h2>Gerenciar usuários</h2>
+                <a href="../pgadms/usuario_php/index_usuario.php" class="sublinhado"><button>Usuários</button></a>
+                
             </div>
 
         </div>
