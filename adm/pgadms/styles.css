@@ -1,0 +1,149 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Animação de fade-in */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f9;
+    color: #383838;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+.sublinhado {
+text-decoration: none;
+}
+/* Keyframes para fade */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header */
+header {
+    background-color: #bd9c0b;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #f5d103;
+}
+
+/* Main */
+main {
+    padding: 40px 20px;
+}
+
+main h1 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-align: center;
+    color: #806905;
+}
+
+/* Grid dos cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    border: 1px solid #d1c389;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #bb9005;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    color: #727402;
+}
+
+/* Botões */
+button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    border: none;
+    background-color: #bd9c0b;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #a78305;
+}
+
+button.delete {
+    background-color: #e53935;
+}
+
+button.delete:hover {
+    background-color: #b71c1c;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #806905;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main h1 {
+        font-size: 1.5em;
+    }
+}
