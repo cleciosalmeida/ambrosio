@@ -72,15 +72,36 @@ $planta = $resultado->fetch_assoc();
         <img src="../adm/uploads/<?= htmlspecialchars($planta['img_planta']) ?>" alt="Imagem de <?= htmlspecialchars($planta['nome_popular_planta']) ?>" class="AbeCardImg" style="max-width: 300px; margin-top: 15px;">
       <?php endif; ?>
 
-      <?php if (!empty($planta['ocorrencia'])): ?>
-        <h2>Ocorrência</h2>
-        <p><?= nl2br(htmlspecialchars($planta['ocorrencia'])) ?></p>
+      <?php if (!empty($planta['estacao_floracao'])): ?>
+        <h2>Floração</h2>
+        <p><?= nl2br(htmlspecialchars($planta['estacao_floracao'])) ?></p>
       <?php endif; ?>
 
       <?php if (!empty($planta['dados_planta'])): ?>
         <h2>Informações sobre a planta</h2>
         <p><?= nl2br(htmlspecialchars($planta['dados_planta'])) ?></p>
       <?php endif; ?>
+      
+      <?php if (!empty($planta['resina_planta'])): ?>
+        <h2>Resina</h2>
+        <p><?= nl2br(htmlspecialchars($planta['resina_planta'])) ?></p>
+      <?php endif; ?>
+
+      <?php if (!empty($planta['nectar_planta'])): ?>
+        <h2>Néctar</h2>
+        <p><?= nl2br(htmlspecialchars($planta['nectar_planta'])) ?></p>
+      <?php endif; ?>
+    
+      <?php if (!empty($planta['polen_planta'])): ?>
+        <h2>Pólen</h2>
+        <p><?= nl2br(htmlspecialchars($planta['polen_planta'])) ?></p>
+      <?php endif; ?>
+
+      <?php if (!empty($planta['abelha_planta'])): ?>
+        <h2>Abelha</h2>
+        <p><?= nl2br(htmlspecialchars($planta['abelha_planta'])) ?></p>
+      <?php endif; ?>
+
     </section>
   </div>
 
