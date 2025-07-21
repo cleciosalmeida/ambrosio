@@ -2,10 +2,10 @@
 session_start();
 
 // Proteção de sessão
-if (!isset($_SESSION['usuario'])) {
-    header("Location: ../../admin.html");
-    exit();
-}
+//if (!isset($_SESSION['usuario'])) {
+  //  header("Location: ../../admin.html");
+    //exit();
+//}
 
 // Conexão com o banco
 $host = "";
