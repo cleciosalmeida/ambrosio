@@ -9,12 +9,16 @@ if (!isset($_SESSION['usuario'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome_popular = $_POST['nome_popular_planta'] ?? '';
     $nome_cientifico = $_POST['nome_cientifico_planta'] ?? '';
-    $ocorrencia = $_POST['ocorrencia'] ?? '';
+    $floracao = $_POST['estacao_floracao'] ?? '';
     $dados = $_POST['dados_planta'] ?? '';
+    $resina = $_POST['resina_planta'] ?? '';
+    $nectar = $_POST['nectar_planta'] ?? '';
+    $polen = $_POST['polen_planta'] ?? '';
+    $abelha = $_POST['abelha_planta'] ?? '';
     $img_nome = '';
 
     // Validações de tamanho
-    if (strlen($nome_popular) > 100 || strlen($nome_cientifico) > 100 || strlen($ocorrencia) > 1000) {
+    if (strlen($nome_popular) > 100 || strlen($nome_cientifico) > 100 || strlen($floracao) > 1000) {
         echo "<script>alert('Algum campo ultrapassou o limite de caracteres.'); window.history.back();</script>";
         exit();
     }
@@ -42,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Conexão com banco
-    $conn = new mysqli("");
+    $conn = new mysqli("", "", "", "", );
     if ($conn->connect_error) {
         die("Erro: " . $conn->connect_error);
     }
@@ -50,12 +54,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Evita SQL Injection
     $nome_popular = $conn->real_escape_string($nome_popular);
     $nome_cientifico = $conn->real_escape_string($nome_cientifico);
-    $ocorrencia = $conn->real_escape_string($ocorrencia);
+    $estacao = $conn->real_escape_string($estacao);
     $dados = $conn->real_escape_string($dados);
+    $resina = $conn->real_escape_string($resina);
+    $nectar = $conn->real_escape_string($nectar);
+    $polen = $conn->real_escape_string($polen);
+    $abelha = $conn->real_escape_string($abelha);
     $img_nome = $conn->real_escape_string($img_nome);
 
-    $sql = "INSERT INTO plantas (nome_popular_planta, nome_cientifico_planta, ocorrencia, dados_planta, img_planta)
-            VALUES ('$nome_popular', '$nome_cientifico', '$ocorrencia', '$dados', '$img_nome')";
+    $sql = "INSERT INTO plantas (nome_popular_planta, nome_cientifico_planta, estacao_floracao, dados_planta, resina_planta, nectar_planta, polen_planta, abelha_planta, img_planta)
+            VALUES ('$nome_popular', '$nome_cientifico', '$estacao', '$dados', '$resina','$nectar','$polen','$abelha' ,'$img_nome')";
 
     if ($conn->query($sql)) {
         header("Location: index_planta.php");
