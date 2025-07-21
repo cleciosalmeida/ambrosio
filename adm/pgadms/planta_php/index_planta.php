@@ -44,9 +44,13 @@ $resultado = $conn->query("SELECT * FROM plantas");
                 <th>ID</th>
                 <th>Nome Popular</th>
                 <th>Nome Científico</th>
-                <th>Ocorrência</th>
-                <th>Dados</th>
+                <th>Estação de Floração</th>
+                <th>Informações</th>
                 <th>Imagem</th>
+                <th>Resina</th>
+                <th>Néctar</th>
+                <th>Pólen</th>
+                <th>Abelhas</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -56,8 +60,12 @@ $resultado = $conn->query("SELECT * FROM plantas");
                 <td><?= $linha['idplantas'] ?></td>
                 <td><?= htmlspecialchars($linha['nome_popular_planta']) ?></td>
                 <td><?= htmlspecialchars($linha['nome_cientifico_planta']) ?></td>
-                <td><?= htmlspecialchars($linha['ocorrencia']) ?></td>
+                <td><?= htmlspecialchars($linha['estacao_floracao']) ?></td>
                 <td><?= htmlspecialchars($linha['dados_planta']) ?></td>
+                <td><?= htmlspecialchars($linha['resina_planta']) ?></td>
+                <td><?= htmlspecialchars($linha['nectar_planta']) ?></td>
+                <td><?= htmlspecialchars($linha['polen_planta']) ?></td>
+                <td><?= htmlspecialchars($linha['abelha_planta']) ?></td>
                 <td>
                    <?php if (!empty($linha['img_planta'])): ?>
         <img src="../../uploads/<?= htmlspecialchars($linha['img_planta']) ?>" alt="Imagem da planta" width="100">
@@ -88,11 +96,23 @@ $resultado = $conn->query("SELECT * FROM plantas");
             <label for="nome_cientifico">Nome científico:</label>
             <input type="text" id="nome_cientifico" name="nome_cientifico_planta" required>
 
-            <label for="ocorrencia">Ocorrência:</label>
-            <input type="text" id="ocorrencia" name="ocorrencia">
+            <label for="estacao_floracao">Floração:</label>
+            <input type="text" id="estacao" name="estacao_floracao">
 
             <label for="dados">Dados da planta:</label>
             <textarea id="dados" name="dados_planta" rows="4"></textarea>
+            
+            <label for="resina">Resina:</label>
+            <textarea id="resina" name="resina_planta" rows="4"></textarea>
+            
+            <label for="nectar">Néctar:</label>
+            <textarea id="nectar" name="nectar_planta" rows="4"></textarea>
+
+            <label for="polen">Pólen:</label>
+            <textarea id="polen" name="polen_planta" rows="4"></textarea>
+           
+            <label for="abelha">Abelhas:</label>
+            <textarea id="abelha" name="abelha_planta" rows="4"></textarea>
 
             <label for="imagem">Imagem da planta:</label>
             <input type="file" id="imagem" name="img_planta" accept="image/*">
