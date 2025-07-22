@@ -50,7 +50,7 @@ if (!isset($_SESSION['usuario'])) {
             </div>
 
             <div class="card">
-                <h2>Espécies de Abelhas</h2>
+                <h2>Abelhas do Meliponário</h2>
                  <a href="../pgadms/abelhas_php/index_abelha.php" class="sublinhado"><button>Gerenciar abelhas</button></a>
                         </div>
 
