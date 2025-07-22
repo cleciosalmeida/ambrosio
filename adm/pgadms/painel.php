@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -52,10 +51,8 @@ if (!isset($_SESSION['usuario'])) {
 
             <div class="card">
                 <h2>Espécies de Abelhas</h2>
-                <button>Nova Abelha</button>
-                <button>Editar</button>
-                <button class="delete">Excluir</button>
-            </div>
+                 <a href="../pgadms/abelhas_php/index_abelha.php" class="sublinhado"><button>Gerenciar abelhas</button></a>
+                        </div>
 
             <div class="card">
                 <h2>Colônias</h2>
@@ -66,9 +63,7 @@ if (!isset($_SESSION['usuario'])) {
 
             <div class="card">
                 <h2>Plantas</h2>
-                <button>Nova Planta</button>
-                <button>Editar</button>
-                <button class="delete">Excluir</button>
+               <a href="../pgadms/planta_php/index_planta.php" class="sublinhado"><button>Plantas</button></a>
             </div>
 
             <div class="card">
