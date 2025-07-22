@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $img_abelha = '';
 
     // Validações de tamanho
-    if (strlen($nome) > 100 || strlen($nome_cientifico) > 100 || strlen($dados) > 1000) {
+    if (strlen($nome) > 100 || strlen($nome_cientifico) > 100 || strlen($dados) > 5000) {
         echo "<script>alert('Algum campo ultrapassou o limite de caracteres.'); window.history.back();</script>";
         exit();
     }
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     $img_abelha = $conn->real_escape_string($img_abelha);
 
-    $sql = "INSERT INTO plantas (nome, nome_cientifico, dados_complementares, img_abelha)
+    $sql = "INSERT INTO abelhas (nome, nome_cientifico, dados_complementares, img_abelha)
             VALUES ('$nome', '$nome_cientifico', '$dados','$img_abelha')";
 
     if ($conn->query($sql)) {
