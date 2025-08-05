@@ -30,6 +30,7 @@ $resultado = $conn->query("SELECT * FROM abelhas");
     <meta charset="UTF-8">
     <title>Cadastro de Abelhas</title>
     <link rel="stylesheet" href="../styles.css">
+     <link rel="shortcut icon" href="../../img/iconeadmin.png"> 
 </head>
 <body>
     <div class="card">
@@ -69,6 +70,10 @@ $resultado = $conn->query("SELECT * FROM abelhas");
                         <input type="hidden" name="id" value="<?= $linha['id'] ?>">
                         <button type="submit" class="delete">Excluir</button>
                     </form>
+                    <form method="GET" action="editar_abelha.php" style="margin-top: 5px;">
+        <input type="hidden" name="id" value="<?= $linha['id'] ?>">
+        <button type="submit" class="edit">Editar</button>
+    </form>
                 </td>
             </tr>
             <?php endwhile; ?>
