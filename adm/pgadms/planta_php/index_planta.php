@@ -30,6 +30,7 @@ $resultado = $conn->query("SELECT * FROM plantas");
     <meta charset="UTF-8">
     <title>Cadastro de Plantas</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="shortcut icon" href="../../img/iconeadmin.png"> 
 </head>
 <body>
     <div class="card">
@@ -46,11 +47,11 @@ $resultado = $conn->query("SELECT * FROM plantas");
                 <th>Nome Científico</th>
                 <th>Estação de Floração</th>
                 <th>Informações</th>
-                <th>Imagem</th>
                 <th>Resina</th>
                 <th>Néctar</th>
                 <th>Pólen</th>
-                <th>Abelhas</th>
+                <th>Abelha</th>
+                <th>Imagem</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -79,6 +80,11 @@ $resultado = $conn->query("SELECT * FROM plantas");
                         <input type="hidden" name="idplantas" value="<?= $linha['idplantas'] ?>">
                         <button type="submit" class="delete">Excluir</button>
                     </form>
+                         </form>
+                    <form method="GET" action="editar_planta.php" style="margin-top: 5px;">
+        <input type="hidden" name="idplantas" value="<?= $linha['idplantas'] ?>">
+        <button type="submit" class="edit">Editar</button>
+    </form>
                 </td>
             </tr>
             <?php endwhile; ?>
