@@ -1,6 +1,7 @@
 <?php 
 session_start();
 
+// Proteção de sessão
 if (!isset($_SESSION['usuario'])) {
     header("Location: ../../admin.html");
     exit();
@@ -45,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+
     // Conexão com banco
     $conn = new mysqli("", "", "", "", );
     if ($conn->connect_error) {
@@ -54,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Evita SQL Injection
     $nome_popular = $conn->real_escape_string($nome_popular);
     $nome_cientifico = $conn->real_escape_string($nome_cientifico);
-    $estacao = $conn->real_escape_string($estacao);
+    $floracao = $conn->real_escape_string($floracao);
     $dados = $conn->real_escape_string($dados);
     $resina = $conn->real_escape_string($resina);
     $nectar = $conn->real_escape_string($nectar);
@@ -62,8 +64,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $abelha = $conn->real_escape_string($abelha);
     $img_nome = $conn->real_escape_string($img_nome);
 
-    $sql = "INSERT INTO plantas (nome_popular_planta, nome_cientifico_planta, estacao_floracao, dados_planta, resina_planta, nectar_planta, polen_planta, abelha_planta, img_planta)
-            VALUES ('$nome_popular', '$nome_cientifico', '$estacao', '$dados', '$resina','$nectar','$polen','$abelha' ,'$img_nome')";
+    // SQL
+    $sql = "INSERT INTO plantas (
+                nome_popular_planta, nome_cientifico_planta, estacao_floracao, 
+                dados_planta, resina_planta, nectar_planta, polen_planta, 
+                abelha_planta, img_planta
+            ) VALUES (
+                '$nome_popular', '$nome_cientifico', '$floracao', 
+                '$dados', '$resina', '$nectar', '$polen', 
+                '$abelha', '$img_nome'
+            )";
 
     if ($conn->query($sql)) {
         header("Location: index_planta.php");
