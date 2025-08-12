@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta às plantas
-$resultado = $conn->query("SELECT * FROM plantas ORDER BY nome_popular_planta ASC");
+$resultado = $conn->query("SELECT * FROM produto ORDER BY nome_produto ASC");
 ?>
 
 <!DOCTYPE html>
@@ -49,21 +49,21 @@ $resultado = $conn->query("SELECT * FROM plantas ORDER BY nome_popular_planta AS
     </header>
 
     <p class="textoExplicativo">
-      A página dedicada ao catálogo de plantas do Meliponário St. Ambrósio apresenta uma seleção detalhada do pasto meliponícola existente no meliponário, destacando as espécies vegetais que fornecem recursos essenciais, como néctar, pólen e resina, para as abelhas nativas. Cada planta catalogada é acompanhada de informações sobre sua importância ecológica, período de floração e benefícios específicos para as abelhas sem ferrão. Essa página tem como objetivo enriquecer o conhecimento dos visitantes sobre as interações entre as abelhas e a flora local, além de incentivar práticas sustentáveis que promovam a conservação do ambiente e da biodiversidade.
+      A página dedicada ao catálogo de produtos do Meliponário St. Ambrósio apresenta uma seleção detalhada do que vendemos. 
     </p>
 
     <section class="gridAbelhas">
       <div class="PastoContent">
         <?php while ($linha = $resultado->fetch_assoc()): ?>
-          <a href="detalhes_planta.php?id=<?= $linha['idplantas'] ?>" style="text-decoration: none; color: inherit;">
+          <a href="detalhes_planta.php?id=<?= $linha['idproduto'] ?>" style="text-decoration: none; color: inherit;">
             <div class="PastoCard">
-              <?php if (!empty($linha['img_planta'])): ?>
-                 <img src="../adm/uploads/<?= htmlspecialchars($linha['img_planta']) ?>" alt="Imagem de <?= htmlspecialchars($linha['nome_popular_planta']) ?>" class="AbeCardImg" />
+              <?php if (!empty($linha['img_produto'])): ?>
+                 <img src="../adm/uploads/<?= htmlspecialchars($linha['img_produto']) ?>" alt="Imagem de <?= htmlspecialchars($linha['nome_produto']) ?>" class="AbeCardImg" />
               <?php else: ?>
                 <img src="../img/semimagem.png" alt="Sem imagem" class="AbeCardImg" />
               <?php endif; ?>
-              <p class="TituloCards"><?= htmlspecialchars($linha['nome_popular_planta']) ?></p>
-              <p class="mainCategoryCardDescription"><?= htmlspecialchars($linha['nome_cientifico_planta']) ?></p>
+              <p class="TituloCards"><?= htmlspecialchars($linha['nome_produto']) ?></p>
+              <p class="mainCategoryCardDescription"><?= htmlspecialchars($linha['descricao_produto']) ?></p>
             </div>
           </a>
         <?php endwhile; ?>
