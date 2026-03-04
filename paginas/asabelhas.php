@@ -1,102 +1,74 @@
+<?php
+session_start();
+
+// Proteção de sessão
+//if (!isset($_SESSION['usuario'])) {
+  //  header("Location: ../paginas/pasto.php");
+    //exit();
+//}
+
+// Conexão com banco
+$host = "";
+$usuario = "";
+$senha = "";
+$banco = "";
+$porta = ;
+
+$conn = new mysqli($host, $usuario, $senha, $banco, $porta);
+if ($conn->connect_error) {
+    die("Erro: " . $conn->connect_error);
+}
+
+// Consulta às abelhas
+$resultado = $conn->query("SELECT * FROM abelhas ORDER BY nome ASC");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-Br">
-  <head>
-    <link rel="stylesheet" href="../css/style.css" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nossas abelhas</title>
-    <link rel="shortcut icon" href="../img/icone.ico" />
-    <!-- Css Bootstrap 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />-->
-  </head>
-  <body>
-    <div class="container">
-      <header class="header">
-        <a href="../index.html" name="Início">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nossas abelhas</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="shortcut icon" href="../img/icone.ico" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a href="../index.html" name="Início">
         <img src="../img/base.png" alt="logo-header" class="logoNavBar" />
       </a>
-        <div class="headerBtnGroup">
-          <a href="../paginas/quemsomos.html"
-            ><button class="navBtn">O meliponário</button></a
-          >
-          <a href="../paginas/prqambrosio.html"
-            ><button class="navBtn">Santo Ambrósio</button></a
-          >
-          <a href="../paginas/asabelhas.html"
-            ><button class="navBtn">Nossas abelhas</button></a
-          >
-            <a href="../paginas/contato.html"
-            ><button class="navBtn">Contato</button></a
-          >
-          <a href="../adm/admin.html"
-          ><button class="navBtn">Admin</button></a
-        >
-        </div>
-      </header>
-       <!--ALTERAR ABAIXO-->
-       <p class="textoExplicativo">O mundo das abelhas sem ferrão é ricamente diverso. <br>Aqui você encontra apenas <spam class="destaqueTexto">algumas</spam> das espécies de abelhas sem ferrão que existem no Brasil, e <br>que conservamos em nosso Meliponário, com colônias.</p>
+      <div class="headerBtnGroup">
+        <a href="../index.html"><button class="navBtn">O meliponário</button></a>
+        <a href="../paginas/prqambrosio.html"><button class="navBtn">Santo Ambrósio</button></a>
+        <a href="../paginas/asabelhas.php"><button class="navBtn">Nossas abelhas</button></a>
+        <a href="../paginas/contato.html"><button class="navBtn">Contato</button></a>
+        <a href="/adm/admin.html"><button class="navBtn">Admin</button></a>
+      </div>
+    </header>
+
+    <p class="textoExplicativo">
+      A página dedicada ao catálogo de abelhas do Meliponário St. Ambrósio apresenta uma seleção detalhada de cada colônia existente no meliponário.
+    </p>
+
     <section class="gridAbelhas">
-      <div class="AbeContent">
-        <a href="abelhas/mirim.html" style="text-decoration: none; color: inherit;">
-          <div class="AbeCard">
-          <img src="../img/abelhas/mirim.jpg" alt="Imagem_Mirim" class="AbeCardImg" />
-          <p class="TituloCards">Plebeia emerina</p>
-          <p class="mainCategoryCardDescription">
-            Mirim
-          </p>
-        </div> 
-        </a>
-        <a href="abelhas/mandacaia.html" style="text-decoration: none; color: inherit;">
-        <div class="AbeCard">
-          <img
-            src="../img/abelhas/mandacaia.jpg"
-            alt="Imagem_Mandaçaia"
-            class="AbeCardImg"
-          />
-          <p class="TituloCards">Melipona quadrifasciata</p>
-          <p class="mainCategoryCardDescription">
-           Mandaçaia
-          </p>
-        </div>
-        </a>
-        <a href="abelhas/jatai.html" style="text-decoration: none; color: inherit;">
-        <div class="AbeCard" name="CardJatai">
-          <img src="../img/abelhas/jatai.jpg" alt="Imagem_Jataí" class="AbeCardImg" />
-          <p class="TituloCards">Tetragonisca angustula</p>
-          <p class="mainCategoryCardDescription">
-            Jataí
-          </p>
-        </div>
-        </a>
-        <a href="abelhas/canudo.html" style="text-decoration: none; color: inherit;">
-        <div class="AbeCard" name="CardCanudo">
-          <img src="../img/abelhas/canudo.jpg" alt="Imagem_Canudo" class="AbeCardImg" />
-          <p class="TituloCards"> Scaptotrigona depilis</p>
-          <p class="mainCategoryCardDescription">
-        Canudo
-          </p>
-        </div>
-      </a>
-      <a href="abelhas/manduri.html" style="text-decoration: none; color: inherit;">
-        <div class="AbeCard" name="CardManduri">
-          <img src="../img/abelhas/manduri.jpg" alt="Imagem_Manduri" class="AbeCardImg" />
-          <p class="TituloCards">Melipona Marginata</p>
-          <p class="mainCategoryCardDescription">
-        Manduri
-          </p>
-        </div>
-      </a>
-      
+      <div class="PastoContent">
+        <?php while ($linha = $resultado->fetch_assoc()): ?>
+          <a href="detalhes_abelhas.php?id=<?= $linha['id'] ?>" style="text-decoration: none; color: inherit;">
+            <div class="PastoCard">
+              <?php if (!empty($linha['img_abelha'])): ?>
+                 <img src="../adm/uploads/<?= htmlspecialchars($linha['img_abelha']) ?>" alt="Imagem de <?= htmlspecialchars($linha['nome']) ?>" class="AbeCardImg" />
+              <?php else: ?>
+                <img src="../img/semimagem.png" alt="Sem imagem" class="AbeCardImg" />
+              <?php endif; ?>
+              <p class="TituloCards"><?= htmlspecialchars($linha['nome']) ?></p>
+              <p class="mainCategoryCardDescription"><?= htmlspecialchars($linha['nome_cientifico']) ?></p>
+            </div>
+          </a>
+        <?php endwhile; ?>
       </div>
     </section>
-        <!--ALTERAR ACIMA - CONTEÚDO -->
-    
-   
-  </body>
+  </div>
+</body>
 </html>
