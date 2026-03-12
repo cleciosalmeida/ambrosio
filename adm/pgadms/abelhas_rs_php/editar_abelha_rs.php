@@ -48,7 +48,7 @@ $abelhas_rs = $resultado->fetch_assoc();
             <input type="text" id="nome_abelhas_rs" name="nome_abelhas_rs" value="<?= htmlspecialchars($abelhas_rs['nome_abelhas_rs']) ?>" required>
 
             <label for="nomecientifico_abelhas_rs">Nome científico:</label>
-            <input type="text" id="nomecientifico_abelhas_rs" name="nomecientifico_abelhas_rs" value="<?= htmlspecialchars($abelha_rs['nomecientifico_abelhas_rs']) ?>" required>
+            <input type="text" id="nomecientifico_abelhas_rs" name="nomecientifico_abelhas_rs" value="<?= htmlspecialchars($abelhas_rs['nomecientifico_abelhas_rs']) ?>" required>
 
             <label for="dados_abelhas_rs">Informações:</label>
             <textarea id="dados_abelhas_rs" name="dados_abelhas_rs" rows="4"><?= htmlspecialchars($abelhas_rs['dados_abelhas_rs']) ?></textarea>
