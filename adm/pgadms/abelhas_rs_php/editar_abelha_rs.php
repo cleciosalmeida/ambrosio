@@ -62,7 +62,7 @@ $abelhas_rs = $resultado->fetch_assoc();
 
             <div class="botoes-formulario">
                 <button type="submit">Atualizar</button>
-                <a href="index_abelha.php">Cancelar</a>
+               <a href="index_abelha_rs.php">Cancelar</a>
             </div>
         </form>
     </div>
