@@ -45,16 +45,16 @@ $abelhas_rs = $resultado->fetch_assoc();
             <input type="hidden" name="idabelhas_rs" value="<?= $abelhas_rs['idabelhas_rs'] ?>">
 
             <label for="nome">Nome:</label>
-            <input type="text" id="nome_abelhas_rs" name="nome_abelhas_rs" value="<?= htmlspecialchars($abelha_rs['nome_abelhas_rs']) ?>" required>
+            <input type="text" id="nome_abelhas_rs" name="nome_abelhas_rs" value="<?= htmlspecialchars($abelhas_rs['nome_abelhas_rs']) ?>" required>
 
             <label for="nomecientifico_abelhas_rs">Nome científico:</label>
             <input type="text" id="nomecientifico_abelhas_rs" name="nomecientifico_abelhas_rs" value="<?= htmlspecialchars($abelha_rs['nomecientifico_abelhas_rs']) ?>" required>
 
             <label for="dados_abelhas_rs">Informações:</label>
-            <textarea id="dados_abelhas_rs" name="dados_abelhas_rs" rows="4"><?= htmlspecialchars($abelha_rs['dados_abelhas_rs']) ?></textarea>
+            <textarea id="dados_abelhas_rs" name="dados_abelhas_rs" rows="4"><?= htmlspecialchars($abelhas_rs['dados_abelhas_rs']) ?></textarea>
 
-            <?php if (!empty($abelha_rs['img_abelha_rs'])): ?>
-                <p>Imagem atual: <img src="../../uploads/<?= htmlspecialchars($abelha_rs['img_abelha_rs']) ?>" width="100"></p>
+            <?php if (!empty($abelhas_rs['img_abelha_rs'])): ?>
+                <p>Imagem atual: <img src="../../uploads/<?= htmlspecialchars($abelhas_rs['img_abelha_rs']) ?>" width="100"></p>
             <?php endif; ?>
 
             <label for="imagem">Nova imagem (opcional):</label>
@@ -62,7 +62,7 @@ $abelhas_rs = $resultado->fetch_assoc();
 
             <div class="botoes-formulario">
                 <button type="submit">Atualizar</button>
-               <a href="index_abelha_rs.php">Cancelar</a>
+                <a href="index_abelha_rs.php">Cancelar</a>
             </div>
         </form>
     </div>
