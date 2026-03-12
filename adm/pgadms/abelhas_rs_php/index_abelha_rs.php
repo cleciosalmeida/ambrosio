@@ -66,12 +66,12 @@ $resultado = $conn->query("SELECT * FROM abelhas_rs");
     <?php endif; ?>
                 </td>
                 <td>
-                    <form method="POST" action="excluir_abelha.php" onsubmit="return confirm('Deseja excluir esta abelha?')">
+                    <form method="POST" action="excluir_abelha_rs.php" onsubmit="return confirm('Deseja excluir esta abelha?')">
                         <input type="hidden" name="id" value="<?= $linha['idabelhas_rs'] ?>">
                         <button type="submit" class="delete">Excluir</button>
                     </form>
-                    <form method="GET" action="editar_abelha.php" style="margin-top: 5px;">
-        <input type="hidden" name="id" value="<?= $linha['idabelhas_rs'] ?>">
+                    <form method="GET" action="editar_abelha_rs.php" style="margin-top: 5px;">
+        <input type="hidden" name="idabelhas_rs" value="<?= $linha['idabelhas_rs'] ?>">
         <button type="submit" class="edit">Editar</button>
     </form>
                 </td>
