@@ -11,7 +11,7 @@ if (!isset($_GET['idabelhas_rs'])) {
     exit();
 }
 
-$id = intval($_GET['idabelhas_rs']);
+$idabelhas_rs = intval($_GET['idabelhas_rs']);
 
 // Conexão
 $conn = new mysqli("", "", "", "", ); 
