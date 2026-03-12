@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($conn->query($sql)) {
-        header("Location: index_abelha.php");
+    header("Location: index_abelha_rs.php");
         exit();
     } else {
         echo "<script>alert('Erro ao atualizar abelha: " . $conn->error . "'); window.history.back();</script>";
